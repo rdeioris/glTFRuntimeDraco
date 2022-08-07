@@ -8,7 +8,7 @@ To enable it just add it to the Plugins/ directory (it will automatically regist
 
 Internally it works by adding two delegates to the GLTF parser (before and after primitives loading):
 
-```c++
+```cpp
 FglTFRuntimeParser::OnPreLoadedPrimitive.AddStatic(FillPrimitiveAdditionalBufferViewsFromDraco);
 FglTFRuntimeParser::OnLoadedPrimitive.AddStatic(FillPrimitiveIndicesFromDraco);
 ```
