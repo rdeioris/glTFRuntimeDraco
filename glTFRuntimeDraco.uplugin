@@ -1,0 +1,30 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "glTFRuntimeDraco",
+	"Description": "KHR_draco_mesh_compression",
+	"Category": "Other",
+	"CreatedBy": "Roberto De Ioris",
+	"CreatedByURL": "https://github.com/rdeioris",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "glTFRuntimeDraco",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "glTFRuntime",
+			"Enabled": true
+		}
+	]
+}
