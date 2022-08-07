@@ -1,0 +1,2 @@
+# glTFRuntimeDraco
+KHR_draco_mesh_compression support for glTFRuntime
