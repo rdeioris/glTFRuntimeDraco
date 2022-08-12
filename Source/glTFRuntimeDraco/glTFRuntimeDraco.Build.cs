@@ -61,6 +61,11 @@ public class glTFRuntimeDraco : ModuleRules
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "draco", "libdraco_linux_x64.a"));
         }
 
+        if (Target.Platform == UnrealTargetPlatform.Android)
+        {
+            PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "draco", "libdraco_android_arm64.a"));
+        }
+
         PrivateIncludePaths.Add(ThirdPartyDirectory);
     }
 }
