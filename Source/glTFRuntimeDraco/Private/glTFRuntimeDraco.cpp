@@ -70,7 +70,7 @@ static void FillPrimitiveAdditionalBufferViewsFromDraco(TSharedRef<FglTFRuntimeP
 		}
 	}
 
-	if (RequiredAttributes.IsEmpty() && !bRequiresIndices)
+	if (RequiredAttributes.Num() == 0 && !bRequiresIndices)
 	{
 		return;
 	}
