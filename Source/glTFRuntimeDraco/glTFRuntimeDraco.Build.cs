@@ -74,6 +74,7 @@ public class glTFRuntimeDraco : ModuleRules
         if (Target.Platform == UnrealTargetPlatform.Mac)
         {
             PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "draco", "libdraco_mac_x64.a"));
+            PublicAdditionalLibraries.Add(System.IO.Path.Combine(ThirdPartyDirectory, "draco", "libdraco_mac_arm64.a"));
         }
 
         PrivateIncludePaths.Add(ThirdPartyDirectory);
