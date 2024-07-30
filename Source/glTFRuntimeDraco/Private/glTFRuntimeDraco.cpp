@@ -27,6 +27,7 @@ static bool DecodeAndAddDracoAttribute(TSharedRef<FglTFRuntimeParser> Parser, Fg
 
 static void FillPrimitiveAdditionalBufferViewsFromDraco(TSharedRef<FglTFRuntimeParser> Parser, TSharedRef<FJsonObject> JsonPrimitiveObject, FglTFRuntimePrimitive& Primitive)
 {
+
 	TSharedPtr<FJsonObject> DracoExtension = Parser->GetJsonObjectExtension(JsonPrimitiveObject, "KHR_draco_mesh_compression");
 	if (!DracoExtension)
 	{
@@ -118,7 +119,11 @@ static void FillPrimitiveAdditionalBufferViewsFromDraco(TSharedRef<FglTFRuntimeP
 	for (const TPair<FString, int64>& Pair : RequiredAttributes)
 	{
 		auto AttributePtr = Mesh->GetAttributeByUniqueId(Pair.Value);
-		//AttributePr->data_type
+
+		if (!AttributePtr)
+		{
+			continue;
+		}
 
 		draco::DataType DracoDataType = AttributePtr->data_type();
 		bool bSuccess = false;
@@ -171,6 +176,7 @@ static void FillPrimitiveAdditionalBufferViewsFromDraco(TSharedRef<FglTFRuntimeP
 
 static void FillPrimitiveIndicesFromDraco(TSharedRef<FglTFRuntimeParser> Parser, TSharedRef<FJsonObject> JsonPrimitiveObject, FglTFRuntimePrimitive& Primitive)
 {
+
 	TSharedPtr<FJsonObject> DracoExtension = Parser->GetJsonObjectExtension(JsonPrimitiveObject, "KHR_draco_mesh_compression");
 	if (!DracoExtension)
 	{
